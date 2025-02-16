@@ -1,0 +1,24 @@
+Options +FollowSymLinks
+RewriteEngine On
+
+# Allow from all IPs
+Require all granted
+
+# Basic PHP settings
+php_value upload_max_filesize 100M
+php_value post_max_size 100M
+php_value max_execution_time 300
+php_value max_input_time 300
+
+# Headers for development
+<IfModule mod_headers.c>
+    Header set Access-Control-Allow-Origin "*"
+    Header set Access-Control-Allow-Methods "GET, POST, OPTIONS"
+    Header set Access-Control-Allow-Headers "*"
+    Header set Permissions-Policy "microphone=*, camera=()"
+    Header set Feature-Policy "microphone *"
+</IfModule>
+
+# Remove HTTPS forcing for local development
+# RewriteCond %{HTTPS} off
+# RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301] 

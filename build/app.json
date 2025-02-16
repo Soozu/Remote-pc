@@ -1,0 +1,16 @@
+{
+    "name": "Remote Desktop Control",
+    "version": "1.0.0",
+    "main_window": {
+        "title": "Remote Desktop Control",
+        "icon": "assets\/icon.ico",
+        "width": 1024,
+        "height": 768,
+        "min_width": 800,
+        "min_height": 600
+    },
+    "dependencies": {
+        "php": "^7.4",
+        "mysql": "^5.7"
+    }
+}
